@@ -2,6 +2,7 @@ body {
     font-size: 20px;
     font-family: "Times New Roman", Times, serif;
     line-height: 1.5;
+    
 }
 
 .content {
@@ -29,3 +30,11 @@ p{
     height: auto;
 }
 
+body.dark {
+    background-color: #333;
+    color: white;
+}
+
+body.dark h2 {
+    color: somecolor;
+}
