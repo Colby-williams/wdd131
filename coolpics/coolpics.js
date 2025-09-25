@@ -21,8 +21,8 @@ window.addEventListener("resize", handleResize);
 function viewerTemplate(pic, alt) {
     return `
     <div class="viewer">
-      <button class="close-viewer">X</button>
-      <img src="${pic}" alt="${alt}">
+        <button class="close-viewer">X</button>
+        <img src="${pic}" alt="${alt}">
     </div>`;
 }
 
@@ -39,7 +39,7 @@ function viewHandler(event) {
     const viewerHTML = viewerTemplate(fullImg, clickedElement.alt);
     document.body.insertAdjacentHTML("afterbegin", viewerHTML);
 	// add a listener to the close button (X) that calls a function called closeViewer when clicked
-document.querySelector(".close-viewer").addEventListener("click", closeViewer);
+    document.querySelector(".close-viewer").addEventListener("click", closeViewer);
 }
 
 document.querySelector(".gallery").addEventListener("click", viewHandler);

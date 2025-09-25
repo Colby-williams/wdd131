@@ -23,12 +23,14 @@ a {
 header, footer{
     background-color: #52499c;
     color: white;
-    text-align: center;
     padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 footer p {
-    margin: 0;
+    margin-left: 10%;
 }
 
 .menuButton {
@@ -80,23 +82,31 @@ footer p {
     bottom:0;
     right:0;
     background-color: rgba(0, 0, 0, 0.75);
+    z-index: 10;
     display: grid;
     grid-template-rows: auto 1fr;
     justify-items: center;
     align-items: center;
-    z-index: 10;
-}
-
-.viewer img {
-    grid-row: 2/3;
-    max-height: 100%;
-    max-width: 90%;
-
 }
 
 .close-viewer {
     grid-row: 1/2;
     color: white;
+    background: none;
+    border: none;
+    justify-self: end;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+.viewer img {
+    grid-row: 2/3;
+    max-height: 100%;
+    max-width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+
 }
 
 @media (min-width: 700px) {
@@ -118,5 +128,8 @@ footer p {
     }
     .menuButton {
         display: none;
+    }
+    .viewer {
+        margin: 50px;
     }
 }
