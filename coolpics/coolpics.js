@@ -33,7 +33,8 @@ function viewHandler(event) {
         return;
     }
 	// get the src attribute from that element and 'split' it on the "-"
-    const src = clickedElement.src.lastIndexOf("-");
+    const src = clickedElement.src;
+    const lastIndexOf = clickedElement.src.lastIndexOf("-");
     const baseName = src.substring(0, lastIndexOf);
 	// construct the new image file name by adding "-full.jpeg" to the first part of the array from the previous step
     const fullImg = baseName + "-full.jpeg";
