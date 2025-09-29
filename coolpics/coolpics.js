@@ -29,11 +29,19 @@ function viewerTemplate(pic, alt) {
 function viewHandler(event) {
 	// create a variable to hold the element that was clicked on from event.target
     const clickedElement = event.target;
-    if (clickedElement.tagName !== "IMG") return;
+    if (clickedElement.tagName !== "IMG") {
+        return;
+    }
 	// get the src attribute from that element and 'split' it on the "-"
-    const srcParts = clickedElement.src.split("-");
+    const src = clickedElement.src.lastIndexOf("-");
+    const baseName = src.substring(0, lastIndexOf);
 	// construct the new image file name by adding "-full.jpeg" to the first part of the array from the previous step
-    const fullImg = srcParts[0] + "-full.jpeg";
+    const fullImg = baseName + "-full.jpeg";
+
+    console.log("Original src:", src);
+    console.log("Base name:", baseName);
+    console.log("Full image:", fullImg);
+    
 	// insert the viewerTemplate into the top of the body element
 	// (element.insertAdjacentHTML("afterbegin", htmltoinsert))
     const viewerHTML = viewerTemplate(fullImg, clickedElement.alt);
