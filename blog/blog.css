@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* Gold color: #EFC69B
+    Red color: #AF1B3F
+    Dark color: #473144
+    Body font: Helvetica, Arial, sans-serif
+    Headline font: Lora, Impact, serif 
+*/
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    color: #473144;
+}
+
+h1, h2 {
+    font-family:'Lora', Impact, serif;
+    color: #AF1B3F;
+}
+
+a {
+    color: #AF1B3F;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* img {
+    max-width: 150px;
+    height: auto;
+    float: left;
+    margin: 0 15px 10px 0;
+} */
+
+
+header h1 {
+    font-size: 2rem;
+    text-align: center;
+    padding: 2rem 0;
+    color: #473144;
+}
+
+nav {
+    border-top: 1px solid #EFC69B;
+    border-bottom: 1px solid #EFC69B;
+    padding: 1rem 0;
+}
+
+.main-nav {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    justify-content: end;
+    justify-items: end;
+
+}
+
+main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+article {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
