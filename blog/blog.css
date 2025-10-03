@@ -53,12 +53,14 @@ nav {
     grid-template-columns: 100px 100px 100px;
     justify-content: end;
     justify-items: end;
+    padding-right: 40px;
 
 }
 
 main {
     display: grid;
     grid-template-columns: 3fr 1fr;
+    margin-top: 50px;
 }
 
 article {
