@@ -1,39 +1,31 @@
 function isCardNumberValid(number) {
-    return number === '1234123412341234'
+    // normally we would contact a credit card service...but we don't know how to do that yet. So to keep things simple we will only accept one number
+    return number === '1234567891011020';
 }
 
 function displayError(msg) {
-    document.querySelector('.errorMsg').innerHTML = msg
+    // Display error message
+    const errorDiv = document.querySelector('.errorMsg');
+    errorDiv.textContent = msg;
 }
 
 function submitHandler(event) {
-    event.preventDefault()
-    displayError('')
-
-    const number = this.cardNumber.value
-    const year = parseInt(this.year.value)
-    const month = parseInt(this.month.value)
-    let errorMsg = ''
-
-    if (isNaN(number)) {
-        errorMsg += 'Card number is not a valid number<br>'
-    } else if (!isCardNumberValid(number)) {
-        errorMsg += 'Card number is not a valid card number<br>'
+    event.preventDefault();
+    let errorMsg = '';
+    const cardNumber = this.cardNumber.value.replace(/\s/g, '');
+    displayError('');
+    if (isNaN(cardNumber) || cardNumber.length < 16) {
+        errorMsg += 'Card number is not valid.\n';
+    } else if (!isCardNumberValid(cardNumber)) {
+        errorMsg += 'Card number is not accepted.\n';
     }
-
-    const current = new Date()
-    const entered = new Date(year, month - 1)
-    if (entered <= current) {
-        errorMsg += 'Expiration date must be in the future<br>'
-    }
-
     if (errorMsg !== '') {
-        displayError(errorMsg)
-        return false
+        displayError(errorMsg);
+        return false;
+    } else {
+        alert('Payment Successful!');
+        this.reset();
     }
-
-    alert('Form submitted successfully!')
-    return true
 }
 
-document.querySelector('#credit-card').addEventListener('submit', submitHandler)
+document.querySelector('.card-form').addEventListener('submit', submitHandler);
