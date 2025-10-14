@@ -8,21 +8,30 @@ body {
 .content {
     max-width: 600px;
     margin: 0 auto;
-    text-align: 1.5rem;
 }
 
 p{
     text-align: left;
 }
 
-.title h2{
-    color: #006EB6;
-}
-
-.title h1,
-.title h2 {
+.title h1 {
     letter-spacing: 2px;
     text-transform: uppercase;
+    font-size: 2.5rem;
+}
+
+.title h2{
+    color: #006EB6;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.does-list {
+    text-align: left;
 }
 
 .logo {
@@ -36,5 +45,6 @@ body.dark {
 }
 
 body.dark h2 {
-    color: somecolor;
+    color: white;
+    border-bottom-color: #555;
 }
