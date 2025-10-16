@@ -2,20 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> RecipeBook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A webpage that contains recipies.">
+    <meta name="author" content="Colby Williams">
+    <link rel="icon" href="images/images/recipe-book.png">
     <link rel="stylesheet" href="recipes.css">
     <script src="recipes.js" defer></script>
 </head>
     <body>
         <header>
-
+            <img src="images/images/recipe-book.png" alt="logo">
         </header>
         <main>
-
+            <section class="search-bar">
+            <form>
+                <input type="search" id="search-input" placeholder="Search for recipes" aria-label="Search for recipes">
+                <button type="submit">Search</button>
+            </form>
+        </section>
+        <section class="recipe-container">
+            <article class="recipe-card">
+                <img src="images/images/sweet-potato-waffle-md.jpg" alt="Sweet Potato Waffles">
+                <div class="recipe-content">
+                    <div class="tags">
+                        <span>Waffles</span>
+                        <span>Sweet Potato</span>
+                        <span>Side</span>
+                    </div>
+                    <h2>Sweet Potato Waffles</h2>
+                    <span
+                        class="rating"
+                        role="img"
+                        aria-label="Rating: 4 out of 5 stars">
+                        <span aria-hidden="true">⭐</span>
+                        <span aria-hidden="true">⭐</span>
+                        <span aria-hidden="true">⭐</span>
+                        <span aria-hidden="true">⭐</span>
+                        <span aria-hidden="true">☆</span>
+                    </span>
+                    <p class="recipe-description">
+                        Savory waffles made with Sweet potato with a hint of Ginger
+                    </p>
+                </div>
+            </article>
+        </section>
         </main>
         <footer>
+            <div class="social">
+            <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates  -->
+                <a href="#"><img src="images/images/instagram_icon.svg" alt="instagram icon"></a>
+                <a href="#"><img src="images/images/youtube_icon.svg" alt="youtube icon"></a>
+                <a href="#"><img src="images/images/pinterest_icon.svg" alt="pinterest icon"></a>
+            <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons created by Freepik - Flaticon</a>
             
+            </div>
         </footer>
     </body>
 </html>

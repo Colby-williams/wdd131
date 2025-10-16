@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
+
+:root {
+    --primary-color: #1B98E0;
+    --secondary-color: #59c3c3;
+    --text-dark: #333;
+    --text-light: #ebebeb;
+    --primary-font: Arial, Helvetica, sans-serif;
+    --secondary-font: "Amatic SC", cursive;
+}
+
+body {
+    font-family: var(--primary-font);
+    color: var(--text-dark);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: white;
+}
+
+main{
+    flex-grow: 1;
+    padding: 1rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1,
+h2 {
+    font-family: var(--secondary-font);
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+.attribution a {
+    font-size: 0.6em;
+    color: gray;
+}
