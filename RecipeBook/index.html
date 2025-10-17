@@ -6,57 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A webpage that contains recipies.">
     <meta name="author" content="Colby Williams">
-    <link rel="icon" href="images/images/recipe-book.png">
+    <link rel="icon" href="images/recipe-book.png">
     <link rel="stylesheet" href="recipes.css">
+
+    <meta property="og:title" content="RecipeBook">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="A webpage that contains delicious and easy-to-follow recipes.">
+    <meta property="og:image" content="images/apple-crisp.jpg">
+    <meta property="og:url" content="/index.html">
+    <meta name="twitter:card" content="summary_large_image">
+
     <script src="recipes.js" defer></script>
 </head>
     <body>
         <header>
-            <img src="images/images/recipe-book.png" alt="logo">
-        </header>
-        <main>
-            <section class="search-bar">
-            <form>
-                <input type="search" id="search-input" placeholder="Search for recipes" aria-label="Search for recipes">
-                <button type="submit">Search</button>
-            </form>
-        </section>
-        <section class="recipe-container">
-            <article class="recipe-card">
-                <img src="images/images/sweet-potato-waffle-md.jpg" alt="Sweet Potato Waffles">
-                <div class="recipe-content">
-                    <div class="tags">
-                        <span>Waffles</span>
-                        <span>Sweet Potato</span>
-                        <span>Side</span>
-                    </div>
-                    <h2>Sweet Potato Waffles</h2>
-                    <span
-                        class="rating"
-                        role="img"
-                        aria-label="Rating: 4 out of 5 stars">
-                        <span aria-hidden="true">⭐</span>
-                        <span aria-hidden="true">⭐</span>
-                        <span aria-hidden="true">⭐</span>
-                        <span aria-hidden="true">⭐</span>
-                        <span aria-hidden="true">☆</span>
-                    </span>
-                    <p class="recipe-description">
-                        Savory waffles made with Sweet potato with a hint of Ginger
-                    </p>
-                </div>
-            </article>
-        </section>
-        </main>
-        <footer>
-            <div class="social">
-            <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates  -->
-                <a href="#"><img src="images/images/instagram_icon.svg" alt="instagram icon"></a>
-                <a href="#"><img src="images/images/youtube_icon.svg" alt="youtube icon"></a>
-                <a href="#"><img src="images/images/pinterest_icon.svg" alt="pinterest icon"></a>
-            <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons created by Freepik - Flaticon</a>
-            
+        <div class="logo">
+                <img src="images/recipe-book.png" alt="Recipe Book Logo">
+                <h1>RECIPEBOOK</h1>
+        </div>
+        <form class="search-form">
+            <label for="search-input" class="sr-only">Find a recipe</label>
+            <input id="search-input" type="text" placeholder="Find a recipe">
+            <button type="submit">
+                <img src="images/search.svg" alt="Search Icon">
+            </button>
+        </form>
+    </header>
+
+    <main>
+        <section class="recipe-card">
+            <img src="images/apple-crisp.jpg" alt="A bowl of apple crisp topped with vanilla ice cream">
+            <div class="card-content">
+                <span class="tag">dessert</span>
+                <h2>Apple Crisp</h2>
+                <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">
+                    <span aria-hidden="true">⭐</span>
+                    <span aria-hidden="true">⭐</span>
+                    <span aria-hidden="true">⭐</span>
+                    <span aria-hidden="true">⭐</span>
+                    <span aria-hidden="true">☆</span>
+                </span>
+                <p class="description">
+                    A delicious and comforting apple crisp with a crunchy oat topping. Perfect with a scoop of vanilla ice cream!
+                </p>
             </div>
-        </footer>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social">
+            <a href="#"><img src="images/instagram_icon.svg" alt="instagram icon"></a>
+            <a href="#"><img src="images/youtube_icon.svg" alt="youtube icon"></a>
+            <a href="#"><img src="images/pinterest_icon.svg" alt="pinterest icon"></a>
+        </div>
+        <a class="attribution" href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons created by Freepik - Flaticon</a>
+    </footer>
     </body>
 </html>
