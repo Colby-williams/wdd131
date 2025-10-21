@@ -24,6 +24,10 @@ body {
     flex-direction: column;
 }
 
+h1 {
+    font-size: 30px;
+}
+
 h1, h2, h3 {
     font-family: var(--heading-font);
     color: var(--primary-color);
@@ -36,15 +40,21 @@ header {
 }
 
 .logo {
-    height: 60px;
-    margin-right: 20px;
+    height: 150px;
+    padding: 10px;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: end;
 }
 
 nav {
     display: flex;
-    justify-content: center;
-    border-bottom: 1px solid var(--primary-color);
-    background-color: var(--accent2-color);
+    justify-content: flex-end;
+    border: 1px solid var(--primary-color);
+    background-color: var(--secondary-color);
     align-items: center;
 }
 
@@ -75,10 +85,19 @@ main {
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .content-container img {
     width: 100%;
+    height: auto;
+}
+
+#russel-nelson{
+    width: 512px; 
     height: auto;
 }
 
@@ -95,4 +114,62 @@ footer {
     padding: 20px;
     border-top: 2px solid var(--primary-color);
     width: 100%;
+}
+
+footer p {
+    padding: 5px;
+    line-height: 1.6;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 5px;
+    line-height: 1.6;
+    display: block;
+}
+
+footer a:hover {
+    color: var(--accent1-color);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    
+    .logo {
+        height: 100px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+    }
+
+    nav a {
+        text-align: center;
+        padding: 12px; 
+        border-bottom: 1px solid var(--primary-color);
+    }
+
+    nav a:last-child {
+        border-bottom: none;
+    }
+
+
+    .content-container {
+        max-width: 100%; 
+        padding: 20px 15px; 
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .content-container p {
+        padding: 15px 5px;
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
 }

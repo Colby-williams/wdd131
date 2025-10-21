@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Luckiest+Guy&display=swap");
+
+:root {
+    --primary-color: #334E68;   /* Slate Blue */
+    --secondary-color: #B0C4DE;  /* Light Steel Blue */
+    --accent1-color: #E0A800;   /* Muted Gold */
+    --accent2-color: #F7F9FB;   /* Very Light Grey-Blue */
+    --dark-text: black;
+    --heading-font: "Luckiest Guy";
+    --paragraph-font: 'Lora', serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--accent2-color);
+    font-family: var(--paragraph-font);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    text-align: center;
+    padding: 10px;
+}
+
+header {
+    width: 100%;
+}
+
+.logo {
+    height: 150px;
+    padding: 10px;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    border: 1px solid var(--primary-color);
+    background-color: var(--secondary-color);
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 15px 25px 15px 25px;
+    color: var(--dark-text);
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+#maincontent {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 20px;
+    padding: 20px;
+    flex-grow: 1; 
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto; 
+}
+
+.filters {
+    background-color: #f0f4f8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    height: fit-content;
+}
+
+.movies {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.movies article {
+    background-color: var(--accent2-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.movies-content {
+    padding: 20px;
+}
+
+.movies-content h2 {
+    font-size: 1.5rem;
+    padding: 0 0 15px 0;
+}
+
+.movies-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.movies-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.movie-details {
+    background-color: #f0f4f8;
+    padding: 20px;
+    margin-top: auto;
+}
+
+.movie-details p {
+    padding: 4px 0;
+    font-size: 0.9rem;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid var(--primary-color);
+    width: 100%;
+}
+
+footer p {
+    padding: 5px;
+    line-height: 1.6;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 5px;
+    line-height: 1.6;
+    display: block;
+}
+
+footer a:hover {
+    color: var(--accent1-color);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    #maincontent {
+        grid-template-columns: 1fr;
+    }
+}
