@@ -163,7 +163,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     #maincontent {
         grid-template-columns: 1fr;
     }

@@ -114,7 +114,7 @@ const movies = [
     releaseYear: "2015",
     description: "A seemingly perfect family looks to fix their problems with the help of Miss Clara, an older, wiser woman.",
     imgSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/WarRoomMoviePoster.jpg/250px-WarRoomMoviePoster.jpg",
-    imgAlt: "Poster for War Room",
+    imgAlt: "Movie poster for War Room",
     rating: "PG",
     genre: "Drama",
     runtime: "2h",
@@ -124,13 +124,121 @@ const movies = [
     id: 11,
     title: "Remember the Titans",
     releaseYear: "2000",
-    description: "In 1971, Virginia high-school football was everything to the people of Alexandria, but when the school board was forced to integrate an all-Black school with an all-white one, the foundation of football's tradition was put to the test.",
-    imgSrc: "https://upload.wikimedia.org/wikipedia/en/d/d1/Remember_the_titansposter.jpg",
-    imgAlt: "Poster for Remember the Titans",
+    description: "A mother's faith stands against all odds and inspires her husband and children to hold onto theirs. Based on a remarkable true story.",
+    imgSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Unsung_Hero_poster.jpg/250px-Unsung_Hero_poster.jpg",
+    imgAlt: "",
     rating: "PG",
     genre: "Drama, Comedy, Sport",
     runtime: "1h 53m",
     review: "7.8/10",
+},
+{
+    id: 12,
+    title: "Unsung Hero",
+    releaseYear: "2024",
+    description: "In 1971, Virginia high-school football was everything to the people of Alexandria, but when the school board was forced to integrate an all-Black school with an all-white one, the foundation of football's tradition was put to the test.",
+    imgSrc: "https://upload.wikimedia.org/wikipedia/en/d/d1/Remember_the_titansposter.jpg",
+    imgAlt: "Movie poster for Unsung Hero",
+    rating: "PG",
+    genre: "Drama, Family",
+    runtime: "1h 53m",
+    review: "7/10",
+},
+{
+    id: 13,
+    title: "God's Not Dead: A Light in Darkness",
+    releaseYear: "2018",
+    description: "Now the late 2010s, an aging Reverend Dave faces cultural and social backlash, including having his church burned down during a protest, and he is antagonized by atheists, leftists, liberal college students, the school board, and rioters.",
+    imgSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/2/2d/GodsNotDead3.jpeg/250px-GodsNotDead3.jpeg",
+    imgAlt: "Movie poster for God's Not Dead: A Light in Darkness",
+    rating: "PG",
+    genre: "Drama",
+    runtime: "1h 45m",
+    review: "4.5/10",
+},
+{
+    id: 14,
+    title: "God's Not Dead: We the People",
+    releaseYear: "2021",
+    description: "Reverend Dave defending himself and a group of Christian homeschooling families after the inspection by the local government official.",
+    imgSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d8/God%27s_Not_Dead_4_poster.png/250px-God%27s_Not_Dead_4_poster.png",
+    imgAlt: "Movie poster for God's Not Dead: We the People",
+    rating: "PG",
+    genre: "Drama",
+    runtime: "1h 32m",
+    review: "4.3/10",
+},
+{
+    id: 15,
+    title: "God's Not Dead: In God We Trust",
+    releaseYear: "2024",
+    description: "Amid political and spiritual turmoil, Reverend David Hill steps up to run for Congress. Opponent Peter Kane, aims to erase religion from policy, and the fight becomes a beacon of hope for people seeking moral leadership in a divided world.",
+    imgSrc: "https://godsnotdead.com/wp-content/uploads/2024/08/GND-IGWT_poster-art_with-header-2.png",
+    imgAlt: "Movie poster for God's Not Dead: In God We Trust",
+    rating: "Not Rated",
+    genre: "Drama",
+    runtime: "1h 36m",
+    review: "3.4/10",
+},
+{
+    id: 16,
+    title: "",
+    releaseYear: "",
+    description: "",
+    imgSrc: "",
+    imgAlt: "",
+    rating: "",
+    genre: "",
+    runtime: "",
+    review: "",
+},
+{
+    id: 17,
+    title: "",
+    releaseYear: "",
+    description: "",
+    imgSrc: "",
+    imgAlt: "",
+    rating: "",
+    genre: "",
+    runtime: "",
+    review: "",
+},
+{
+    id: 18,
+    title: "",
+    releaseYear: "",
+    description: "",
+    imgSrc: "",
+    imgAlt: "",
+    rating: "",
+    genre: "",
+    runtime: "",
+    review: "",
+},
+{
+    id: 19,
+    title: "",
+    releaseYear: "",
+    description: "",
+    imgSrc: "",
+    imgAlt: "",
+    rating: "",
+    genre: "",
+    runtime: "",
+    review: "",
+},
+{
+    id: 20,
+    title: "",
+    releaseYear: "",
+    description: "",
+    imgSrc: "",
+    imgAlt: "",
+    rating: "",
+    genre: "",
+    runtime: "",
+    review: "",
 },
 ]
 
@@ -138,35 +246,27 @@ const movieContainer = document.querySelector('.movies')
 
 function movieTemplate(movie) {
 	const template = `      
+        <article>
         <div class="movies-content">
             <h2>${movie.title}</h2>
-            
             <img src="${movie.imgSrc}" alt="${movie.imgAlt}">
-            
             <p>${movie.description}</p>
         </div>
         <div class="movie-details">
             <p class="release-year"><strong>Released:</strong> ${movie.releaseYear}</p>
-            
             <p class="rating"><strong>Rating:</strong> ${movie.rating}</p>
-            
             <p class="genre"><strong>Genre:</strong> ${movie.genre}</p>
-
             <p class="runtime"><strong>Runtime:</strong> ${movie.runtime}</p>
-            
             <p class="review"><strong>Review:</strong> ${movie.review}</p>
         </div>
+    </article>
     `;
 	return template;
 }
 
 function displayMovies(movies) {
-	movies.forEach(movie => {
-		const newMovie = document.createElement('article');
-		const movieHtml = movieTemplate(movie);
-        newMovie.innerHTML = movieHtml;
-		movieContainer.appendChild(newMovie);
-	});
+    const allMoviesHtml = movies.map(movieTemplate).join('');
+    movieContainer.innerHTML = allMoviesHtml;
 }
 
 displayMovies(movies);
