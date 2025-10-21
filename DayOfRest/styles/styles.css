@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Luckiest+Guy&display=swap");
+
+:root {
+    --primary-color: #334E68;   /* Slate Blue */
+    --secondary-color: #B0C4DE;  /* Light Steel Blue */
+    --accent1-color: #E0A800;   /* Muted Gold */
+    --accent2-color: #F7F9FB;   /* Very Light Grey-Blue */
+    --dark-text: black;
+    --heading-font: "Luckiest Guy";
+    --paragraph-font: 'Lora', serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--accent2-color);
+    font-family: var(--paragraph-font);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    text-align: center;
+    padding: 10px;
+}
+
+header {
+    width: 100%;
+}
+
+.logo {
+    height: 60px;
+    margin-right: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid var(--primary-color);
+    background-color: var(--accent2-color);
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 15px 25px 15px 25px;
+    color: var(--dark-text);
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+main {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.content-container {
+    background-color: var(--accent2-color);
+    max-width: 800px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    padding: 40px 20px;
+}
+
+.content-container img {
+    width: 100%;
+    height: auto;
+}
+
+.content-container p {
+    padding: 25px;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid var(--primary-color);
+    width: 100%;
+}
