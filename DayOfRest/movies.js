@@ -124,8 +124,8 @@ const movies = [
     id: 11,
     title: "Remember the Titans",
     releaseYear: "2000",
-    description: "A mother's faith stands against all odds and inspires her husband and children to hold onto theirs. Based on a remarkable true story.",
-    imgSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Unsung_Hero_poster.jpg/250px-Unsung_Hero_poster.jpg",
+    description: "In 1971, Virginia high-school football was everything to the people of Alexandria, but when the school board was forced to integrate an all-Black school with an all-white one, the foundation of football's tradition was put to the test.",
+    imgSrc: "https://upload.wikimedia.org/wikipedia/en/d/d1/Remember_the_titansposter.jpg",
     imgAlt: "",
     rating: "PG",
     genre: "Drama, Comedy, Sport",
@@ -136,8 +136,8 @@ const movies = [
     id: 12,
     title: "Unsung Hero",
     releaseYear: "2024",
-    description: "In 1971, Virginia high-school football was everything to the people of Alexandria, but when the school board was forced to integrate an all-Black school with an all-white one, the foundation of football's tradition was put to the test.",
-    imgSrc: "https://upload.wikimedia.org/wikipedia/en/d/d1/Remember_the_titansposter.jpg",
+    description: "A mother's faith stands against all odds and inspires her husband and children to hold onto theirs. Based on a remarkable true story.",
+    imgSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Unsung_Hero_poster.jpg/250px-Unsung_Hero_poster.jpg",
     imgAlt: "Movie poster for Unsung Hero",
     rating: "PG",
     genre: "Drama, Family",
@@ -182,71 +182,103 @@ const movies = [
 },
 {
     id: 16,
-    title: "",
-    releaseYear: "",
-    description: "",
-    imgSrc: "",
-    imgAlt: "",
-    rating: "",
-    genre: "",
-    runtime: "",
-    review: "",
+    title: "Miracles from Heaven",
+    releaseYear: "2016",
+    description: "Based on the incredible true story of the Beam family.",
+    imgSrc: "https://upload.wikimedia.org/wikipedia/en/6/62/Miracles_from_Heaven_poster.jpg",
+    imgAlt: "Movie poster for Miracles from Heaven",
+    rating: "PG",
+    genre: "Biography, Drama, Family",
+    runtime: "1h 49m",
+    review: "7.1/10",
 },
 {
     id: 17,
-    title: "",
-    releaseYear: "",
-    description: "",
-    imgSrc: "",
-    imgAlt: "",
-    rating: "",
-    genre: "",
-    runtime: "",
-    review: "",
+    title: "Soul Surfer",
+    releaseYear: "2011",
+    description: "Bethany Hamilton, a professional surfer, loses her left arm in a shark attack. Unwilling to pay attention to the gravity of her situation, Bethany decides to get back into the ocean and surf again.",
+    imgSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/1/1d/Soul_Surfer_Poster.jpg/250px-Soul_Surfer_Poster.jpg",
+    imgAlt: "Movie poster for Soul Surfer",
+    rating: "PG",
+    genre: "Drama, Sport, Family",
+    runtime: "1h 52m",
+    review: "7/10",
 },
 {
     id: 18,
-    title: "",
-    releaseYear: "",
-    description: "",
-    imgSrc: "",
-    imgAlt: "",
-    rating: "",
-    genre: "",
-    runtime: "",
-    review: "",
+    title: "Unbroken: Path to Redemption",
+    releaseYear: "2018",
+    description: "The next amazing chapter of Olympian and World War II hero Louis Zamperini's powerful true story of forgiveness, redemption, and amazing grace.",
+    imgSrc: "https://upload.wikimedia.org/wikipedia/en/7/76/Unbroken_poster.jpg",
+    imgAlt: "Movie poster for Unbroken: Path to Redemption",
+    rating: "PG-13",
+    genre: "Biography, Drama, History",
+    runtime: "1h 38m",
+    review: "5.8/10",
 },
 {
     id: 19,
-    title: "",
-    releaseYear: "",
-    description: "",
-    imgSrc: "",
-    imgAlt: "",
-    rating: "",
-    genre: "",
-    runtime: "",
-    review: "",
+    title: "Escape from Germany",
+    releaseYear: "2024",
+    description: "1939, Hitler's army was closing borders, and eighty-five American missionaries were in Germany serving their church. The escape of these missionaries from Nazi Germany is one of the most dramatic events to occur in modern church history.",
+    imgSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/f/fa/Escape_from_Germany_%282024_film%29.jpg/250px-Escape_from_Germany_%282024_film%29.jpg",
+    imgAlt: "Movie poster for Escape from Germany",
+    rating: "PG",
+    genre: "Docudrama, Drama, History, War",
+    runtime: "1h 37m",
+    review: "5.5/10",
 },
 {
     id: 20,
-    title: "",
-    releaseYear: "",
-    description: "",
-    imgSrc: "",
-    imgAlt: "",
-    rating: "",
-    genre: "",
-    runtime: "",
-    review: "",
+    title: "Ephraim's Rescue",
+    releaseYear: "2013",
+    description: "By listening to and following his heart, Ephraim Hanks finds his way in life and eventually provides relief and rescue to the suffering Martin Handcart Company. Based on a true story",
+    imgSrc: "https://upload.wikimedia.org/wikipedia/en/4/46/EphraimsRescue.jpg",
+    imgAlt: "Movie poster for Ephraim's Rescue",
+    rating: "PG",
+    genre: "Adventure, Drama, History",
+    runtime: "1h 39m",
+    review: "5.8/10",
 },
 ]
 
-const movieContainer = document.querySelector('.movies')
+const movieContainer = document.querySelector('.movies');
+const sortBySelect = document.getElementById('sort-by');
+const genreSelect = document.getElementById('filter-genre');
+const ratingSelect = document.getElementById('filter-rating');
+
+function populateFilters() {
+    // This will add the Genres
+    const allGenres = new Set();
+    movies.forEach(movie => {
+        movie.genre.split(', ').forEach(genre => {
+            allGenres.add(genre.trim());
+        });
+    });
+    
+    // This will sort the genres alphabetically and add it to the dropdown
+    [...allGenres].sort().forEach(genre => {
+        const option = document.createElement('option');
+        option.value = genre;
+        option.textContent = genre;
+        genreSelect.appendChild(option);
+    });
+
+    // This will add the ratings
+    const allRatings = new Set(movies.map(movie => movie.rating));
+    
+    // This will sort the ratings and will add them to the dropdown menu
+    [...allRatings].sort().forEach(rating => {
+        const option = document.createElement('option');
+        option.value = rating;
+        option.textContent = rating;
+        ratingSelect.appendChild(option);
+    });
+}
 
 function movieTemplate(movie) {
 	const template = `      
-        <article>
+    <article>
         <div class="movies-content">
             <h2>${movie.title}</h2>
             <img src="${movie.imgSrc}" alt="${movie.imgAlt}">
@@ -269,4 +301,56 @@ function displayMovies(movies) {
     movieContainer.innerHTML = allMoviesHtml;
 }
 
+function applyFiltersAndSort() {
+    let filteredMovies = [...movies];
+    
+    // This will get the current filter and their values
+    const selectedGenre = genreSelect.value;
+    const selectedRating = ratingSelect.value;
+    const sortBy = sortBySelect.value;
+
+    if (selectedGenre !== 'all') {
+        filteredMovies = filteredMovies.filter(movie => 
+            movie.genre.includes(selectedGenre)
+        );
+    }
+
+    if (selectedRating !== 'all') {
+        filteredMovies = filteredMovies.filter(movie => 
+            movie.rating === selectedRating
+        );
+    }
+    // I had AI help me figure out how to split the string here because I had a hard time getting it to work
+    const getReviewScore = (reviewString) => parseFloat(reviewString.split('/')[0]);
+    // I also learned how to do this part from AI how to use use switch statements for the sorting option
+    switch (sortBy) {
+        case 'title-az':
+            filteredMovies.sort((a, b) => a.title.localeCompare(b.title));
+            break;
+        case 'title-za':
+            filteredMovies.sort((a, b) => b.title.localeCompare(a.title));
+            break;
+        case 'year-newest':
+            filteredMovies.sort((a, b) => b.releaseYear - a.releaseYear);
+            break;
+        case 'year-oldest':
+            filteredMovies.sort((a, b) => a.releaseYear - b.releaseYear);
+            break;
+        case 'rating-highest':
+            filteredMovies.sort((a, b) => getReviewScore(b.review) - getReviewScore(a.review));
+            break;
+        case 'rating-lowest':
+            filteredMovies.sort((a, b) => getReviewScore(a.review) - getReviewScore(b.review));
+            break;
+    }
+
+    displayMovies(filteredMovies);
+}
+
+
+sortBySelect.addEventListener('change', applyFiltersAndSort);
+genreSelect.addEventListener('change', applyFiltersAndSort);
+ratingSelect.addEventListener('change', applyFiltersAndSort);
+
+populateFilters();
 displayMovies(movies);

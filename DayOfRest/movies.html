@@ -22,8 +22,35 @@
         </header>
         <main id="maincontent">
             <aside class="filters">
-                <p>Filters will go here</p>
-            </aside>
+    <h3>Filters</h3>
+    
+    <div class="filter-group">
+        <label for="sort-by">Sort By:</label>
+        <select id="sort-by" name="sort-by">
+            <option value="default">Default</option>
+            <option value="title-az">Title (A-Z)</option>
+            <option value="title-za">Title (Z-A)</option>
+            <option value="year-newest">Release Year (Newest)</option>
+            <option value="year-oldest">Release Year (Oldest)</option>
+            <option value="rating-highest">Review (Highest)</option>
+            <option value="rating-lowest">Review (Lowest)</option>
+        </select>
+    </div>
+
+    <div class="filter-group">
+        <label for="filter-genre">Genre:</label>
+        <select id="filter-genre" name="filter-genre">
+            <option value="all">All Genres</option>
+            </select>
+    </div>
+
+    <div class="filter-group">
+        <label for="filter-rating">Rating:</label>
+        <select id="filter-rating" name="filter-rating">
+            <option value="all">All Ratings</option>
+            </select>
+    </div>
+</aside>
             <section class="movies">
             </section>
         </main>
