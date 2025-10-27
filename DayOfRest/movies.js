@@ -301,7 +301,7 @@ function movieTemplate(movie) {
     <article>
         <div class="movies-content">
             <h2>${movie.title}</h2>
-            <img src="${movie.imgSrc}" alt="${movie.imgAlt}">
+            <img width="250" height="350" src="${movie.imgSrc}" alt="${movie.imgAlt}">
             <p>${movie.description}</p>
         </div>
         <div class="movie-details">
